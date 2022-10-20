@@ -13,8 +13,8 @@ class WasmRelevantCreateCall extends InvokeExpr {
 // reassignment of Module.onRuntimeInitialized, etc
 class WasmPropReassignment extends Assignment {
 	WasmPropReassignment() {
-		this.getLhs() instanceof PropAccess and 
-		this.getLhs().toString() in ["Module.wasmBinary", "Module.onRuntimeInitialized"]		
+		this.getLhs().(PropAccess).getBase().toString() = "Module" and  
+		this.getLhs().(PropAccess).getPropertyName() in ["wasmBinary", "onRuntimeInitialized"]		
 	}
 }
 

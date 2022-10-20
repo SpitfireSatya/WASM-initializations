@@ -1,0 +1,3 @@
+name: wasm-find-queries
+version: 0.0.0
+libraryPathDependencies: codeql-javascript

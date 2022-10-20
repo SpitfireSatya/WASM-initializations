@@ -1,8 +1,10 @@
 (function() {
 
   // Import wasm stuff
-  import * as wasm from 'something-wasm';
-  
+  //import * as wasm from 'something-wasm';
+
+  let wasm = require("something-wasm");  
+
   const importObject = { imports: { imported_func: (arg) => console.log(arg) } };
   
   // wasm loaded asynchronously as a js file
@@ -27,7 +29,7 @@
   // Instantiate from a wasm stream
 
   WebAssembly.instantiateStreaming(fetch("simple.wasm"), importObject).then((obj) => 
-    // doOtherStuff();
+     {} // doOtherStuff();
   );
   
   // webassemblyModule
